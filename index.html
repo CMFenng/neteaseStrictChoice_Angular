@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>网易严选 - 以严谨的态度，为中国消费者甄选天下优品</title>
+    <!-- 标题图标 -->
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="lib/reset.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
@@ -11,34 +12,40 @@
 </head>
 <body>
 <!-- 切换的容器 -->
-<!--<div ui-view ng-class="{ true : 'show', false : 'hide' }[rootIsShowFooter]">
+<div ui-view>
     
-</div>-->
-<footer id="tabBar" ng-show="true">
-    <a class="item active" href="/home">
+</div>
+<footer id="tabBar">
+    <a class="item" href="#/home" ng-class="{ home : 'active' }[which]">
         <i class="icon homeIcon"></i>
         <span class="iconTxt">首页</span>
     </a>
-    <a class="item" href="/topic">
+    <a class="item" href="#/topic" ng-class="{ topic : 'active' }[which]">
         <i class="icon topicIcon"></i>
         <span class="iconTxt">专题</span>
     </a>
-    <a class="item" href="/sort">
+    <a class="item" href="#/sort" ng-class="{ sort : 'active' }[which]">
         <i class="icon sortIcon"></i>
         <span class="iconTxt">分类</span>
     </a>
-    <a class="item" href="/cart">
+    <a class="item" href="#/cart" ng-class="{ cart : 'active' }[which]">
         <i class="icon cartIcon"></i>
         <span class="iconTxt">购物车</span>
     </a>
-    <a class="item" href="/mine">
+    <a class="item" href="#/mine" ng-class="{ mine : 'active' }[which]">
         <i class="icon mineIcon"></i>
         <span class="iconTxt">个人</span>
     </a>
-    
 </footer>
 <script type="text/javascript" src="lib/flexible.js"></script>
+<!-- 要注意导入顺序（先导入 angular-css.js 和  angular-route.js，再导入 app.js） -->
 <script type="text/javascript" src="lib/angular-css.js"></script>
+<script type="text/javascript" src="lib/angular-ui-router.js"></script>
+<!-- 导入主入口文件 -->
 <script type="text/javascript" src="app.js"></script>
+<!-- 注意这里服务文件要放在控制器文件之前 -->
+<!--<script type="text/javascript" src="js/services.js"></script>-->
+<!-- 导入控制器文件 -->
+<script type="text/javascript" src="js/controllers.js"></script>
 </body>
 </html>
