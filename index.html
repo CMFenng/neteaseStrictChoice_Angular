@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>网易严选 - 以严谨的态度，为中国消费者甄选天下优品</title>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="lib/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+</head>
+<body>
+<!-- 切换的容器 -->
+<!--<div ui-view ng-class="{ true : 'show', false : 'hide' }[rootIsShowFooter]">
+    
+</div>-->
+<footer id="tabBar" ng-show="true">
+    <a class="item active" href="/home">
+        <i class="icon homeIcon"></i>
+        <span class="iconTxt">首页</span>
+    </a>
+    <a class="item" href="/topic">
+        <i class="icon topicIcon"></i>
+        <span class="iconTxt">专题</span>
+    </a>
+    <a class="item" href="/sort">
+        <i class="icon sortIcon"></i>
+        <span class="iconTxt">分类</span>
+    </a>
+    <a class="item" href="/cart">
+        <i class="icon cartIcon"></i>
+        <span class="iconTxt">购物车</span>
+    </a>
+    <a class="item" href="/mine">
+        <i class="icon mineIcon"></i>
+        <span class="iconTxt">个人</span>
+    </a>
+    
+</footer>
+<script type="text/javascript" src="lib/flexible.js"></script>
+<script type="text/javascript" src="lib/angular-css.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
