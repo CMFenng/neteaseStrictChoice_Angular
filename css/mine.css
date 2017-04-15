@@ -1,4 +1,142 @@
-#mine{
-    color: purple;
-    font-size: 1.5625rem;
+/* 个人简介 */
+#mine #myProfile{
+    padding: 0 0.4rem;
+    height: 3.6rem;
+    background-image: url(../img/mine_myProfileBg.jpg);
+    background-size: 100%;
+    overflow: hidden;
+}
+
+#mine #infoWrap{
+    padding: 0.85333rem 0;
+    position: relative;
+}
+
+#mine #avatar{
+    vertical-align: middle;
+    width: 1.89333rem;
+    height: 1.89333rem;
+    border-radius: 50%;
+}
+
+#mine #info{
+    margin-left: 0.4rem;
+    line-height: 1;
+    display: inline-block;
+    position: absolute;
+    top: 1.26rem;
+}
+
+#mine #nickname{
+    color: #fff;
+    font-size: 0.48rem;
+    line-height: 1.2;
+    margin-bottom: 0.13333rem;
+    /* 文本超出部分以省略号显示 */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#mine #memberType{
+    color: #7f7f7f;
+    font-size: 0.37333rem;
+}
+
+/* 菜单列表 */
+#mine #myMenu{
+    margin-bottom: 0.53333rem;
+    background: #fff;
+}
+
+#mine #list{
+    /* 清除浮动 */
+    overflow: hidden;
+}
+
+#mine .item{
+    float: left;
+    width: 33.33333%;
+    border-right: 0.03125rem solid rgba(0, 0, 0, 0.15);
+    border-bottom: 0.03125rem solid rgba(0, 0, 0, 0.15);
+}
+#mine .item:nth-of-type(3n){
+    border-right: none;
+}
+#mine .item:nth-last-of-type(1){
+    border-bottom: none;
+}
+#mine .item:nth-last-of-type(2){
+    border-bottom: none;
+}
+
+#mine .menuItem{
+    height: 2.4rem;
+    padding-top: 0.6rem;
+    text-align: center;
+    display: block;
+}
+
+#mine .menuIcon{
+    width: 0.66667rem;
+    height: 0.66667rem;
+    margin-bottom: 0.21333rem;
+    background-image: url(../img/mine_menuIcon.png);
+    background-repeat: no-repeat;
+    background-size: 0.66667rem 9.36rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#mine .item:nth-of-type(1) .menuIcon{
+    background-position: 0 -6.4rem;
+}
+#mine .item:nth-of-type(2) .menuIcon{
+    background-position: 0 -7.89333rem;
+}
+#mine .item:nth-of-type(3) .menuIcon{
+    background-position: 0 -0.8rem;
+}
+#mine .item:nth-of-type(4) .menuIcon{
+    background-position: 0 -1.6rem;
+}
+#mine .item:nth-of-type(5) .menuIcon{
+    background-position: 0 -3.2rem;
+}
+#mine .item:nth-of-type(6) .menuIcon{
+    background-position: 0 -7.2rem;
+}
+#mine .item:nth-of-type(7) .menuIcon{
+    background-position: 0 0;
+}
+#mine .item:nth-of-type(8) .menuIcon{
+    background-position: 0 -8.69333rem;
+}
+#mine .item:nth-of-type(9) .menuIcon{
+    background-position: 0 -4.8rem;
+}
+#mine .item:nth-of-type(10) .menuIcon{
+    background-position: 0 -4rem;
+}
+#mine .item:nth-of-type(11) .menuIcon{
+    background-position: 0 -2.4rem;
+}
+
+#mine .menuTxt{
+    display: block;
+    font-size: .32rem;
+    line-height: 1;
+    color: #333;
+}
+
+/* 退出登录 */
+#mine #exitBtn{
+    width: 100%;
+    line-height: 1.28rem;
+    border: 1px solid #fff;
+    border-radius: 0.125rem;
+    background-color: #fff;
+    color: #333;
+    font-size: .37333rem;
+    text-align: center;
 }
