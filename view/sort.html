@@ -1,21 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>Document</title>
+	<!--==========================以下==================================-->
+	<link rel="stylesheet" type="text/css" href="../lib/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/sort.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/sortSubPage.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+	<!--========================================================================-->
+</head>
+<body>
+<!--================================以下============================================-->
 <div id="sort">
+    <!-- 头部 -->
     <div id="sortHeader">
         <div id="search">
             <i id="searchIcon"></i>
             <input type="text" id="searchIpt" placeholder="商品搜索, 共4098款好物" />
         </div>
     </div>
-    <div class="cateNavVertWrap">
-        <ul id="cateNav" class="cateNavVert">
-            <li class="item" ui-sref=".sortSubPage">
-                <a class="txt" href="/item/cateList?categoryId=1022001">推荐</a>
+    <!-- 侧边菜单 -->
+    <ul id="cateNav">
+        <li class="cateItem active" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+        <li class="cateItem" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+        <li class="cateItem active" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+        <li class="cateItem" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+        <li class="cateItem active" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+        <li class="cateItem" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+        <li class="cateItem active" ui-sref=".sortSubPage">
+            <a class="cateTxt" href="">推荐</a>
+        </li>
+    </ul>
+    <!-- 分类列表 -->
+    <div id="cateList" ui-view="view" >
+<!--======================================================-->        
+<div id="sortSubPage">
+    <div class="banner" style="background-image:url(../img/000sortSubPageBanner.jpg);">
+        <div class="cnt">热卖好物，诚意推荐。</div>
+    </div>
+    <div class="cateList">
+        <div class="hd">
+            <span class="text">
+                <span>推荐</span><span>分类</span>
+            </span>
+        </div>
+        <ul class="list">
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
             </li>
-            <li class="item" ui-sref=".sortSubPage" ng-repeat="menu in cateList">
-                <a class="txt" href="">{{ menu.name }}</a>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
+            </li>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
+            </li>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
+            </li>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
+            </li>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
+            </li>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
+            </li>
+            <li class="cateItemLi">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="../img/000sortSubPageCateImg.png" class="cateImg">
+                    </div>
+                    <div class="name">丁磊推荐</div>
+                </a>
             </li>
         </ul>
     </div>
-    <div class="cateContent" ui-view="view" >
+</div>
         
+        
+        
+        
+<!--========================================-->        
     </div>
 </div>
+<!--===================================================================================-->
+<script type="text/javascript" src="../lib/flexible.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
+/* 图片 */
 #sortSubPage .banner{
-    position: relative;
     width: 100%;
     height: 2.56rem;
     display: table;
@@ -16,6 +16,7 @@
     color: #fff;
 }
 
+/* 标题 */
 #sortSubPage .hd{
     height: 1.44rem;
     line-height: 1.44rem;
@@ -28,26 +29,59 @@
     position: relative;
 }
 #sortSubPage .text:before{
-    position: absolute;
+    width: .53333rem;
+    height: 1px;
+    margin: auto;
+    background-color: #d9d9d9;
+    transform-origin: 50% 100% 0;
     content: '';
+    position: absolute;
     top: 0;
     left: -.74667rem;
     bottom: 0;
-    margin: auto;
-    height: 1px;
-    width: .53333rem;
-    background-color: #d9d9d9;
-    transform-origin: 50% 100% 0;
 }
 #sortSubPage .text:after{
-    position: absolute;
+    width: .53333rem;
+    height: 1px;
+    margin: auto;
+    background-color: #d9d9d9;
+    transform-origin: 50% 100% 0;
     content: '';
+    position: absolute;
     top: 0;
     right: -.74667rem;
     bottom: 0;
-    margin: auto;
-    height: 1px;
-    width: .53333rem;
-    background-color: #d9d9d9;
-    transform-origin: 50% 100% 0;
+}
+
+/* 分类列表 */
+#sortSubPage .cateItemLi{
+    width: 1.92rem;
+    margin-right: .45333rem;
+    display: inline-block;
+    font-size: 0;
+    /*vertical-align: top;*/
+}
+
+#sortSubPage .cateItemLi:nth-of-type(3n){
+    margin-right: -.13333rem;
+}
+
+#sortSubPage .cateImgWrapper{
+    width: 1.92rem;
+    height: 1.92rem;
+    background: url(../img/sortSubPage_ItemBg.png) center no-repeat;
+}
+
+#sortSubPage .cateImgWrapper .cateImg{
+    display: block;
+    width: 100%;
+    background: #fff;
+}
+
+#sortSubPage .cateItemLi .name{
+    height: .96rem;
+    font-size: .32rem;
+    color: #333;
+    text-align: center;
+    line-height: .45333rem;
 }
