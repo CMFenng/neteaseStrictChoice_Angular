@@ -43,8 +43,9 @@ angular.module('myApp')
     .controller('SortSubPageCtrl', ['$scope', '$css', 'getDataService',
         function ($scope, $css, getDataService) {
             $css.add('./css/sortSubPage.css');
-            getDataService.getlivingHome().success(function (resuleData) {
-                $scope.livingHome = resuleData;
+            getDataService.getSortCateData(1012000).success(function (resuleData) {
+                $scope.currentCategory = resuleData.currentCategory;
+                $scope.cateItemArr = resuleData.categoryItemList;
             })
     }])
     .controller('CartCtrl', ['$scope', '$css',

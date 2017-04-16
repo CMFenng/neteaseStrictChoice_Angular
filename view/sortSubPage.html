@@ -1,0 +1,22 @@
+<div id="sortSubPage">
+    <div class="banner" style="background-image:url({{ currentCategory.bannerUrl }});">
+        <div class="cnt">{{ currentCategory.frontName }}</div>
+    </div>
+    <div class="cateList">
+        <div class="hd">
+            <span class="text">
+                <span>{{ currentCategory.name }}</span><span>分类</span>
+            </span>
+        </div>
+        <ul class="list">
+            <li class="cateItemLi" ng-repeat="categoryObj in cateItemArr">
+                <a href="">
+                    <div class="cateImgWrapper">
+                        <img src="{{ categoryObj.category.bannerUrl }}" class="cateImg">
+                    </div>
+                    <div class="name">{{ categoryObj.category.name }}</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
