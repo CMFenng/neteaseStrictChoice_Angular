@@ -37,6 +37,16 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
                 templateUrl : './view/sort.html',
                 controller : 'SortCtrl'
             })
+            .state('sort.sortSubPage', {
+                url : '/sortSubPage',
+                views : {
+                    // view@sort 是通过名字能区分要切换的容器
+                    'view@sort' : {
+                        controller : 'SortSubPageCtrl',
+                        templateUrl : './view/sortSubPage.html'
+                    }
+                }
+            })
             // 购物车
             .state('cart', {
                 url : '/cart',

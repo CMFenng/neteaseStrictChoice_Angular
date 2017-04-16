@@ -1,3 +1,21 @@
 <div id="sort">
-    <h1>{{ name }}</h1>
+    <div id="sortHeader">
+        <div id="search">
+            <i id="searchIcon"></i>
+            <input type="text" id="searchIpt" placeholder="商品搜索, 共4098款好物" />
+        </div>
+    </div>
+    <div class="cateNavVertWrap">
+        <ul id="cateNav" class="cateNavVert">
+            <li class="item" ui-sref=".sortSubPage">
+                <a class="txt" href="/item/cateList?categoryId=1022001">推荐</a>
+            </li>
+            <li class="item" ui-sref=".sortSubPage" ng-repeat="menu in cateList">
+                <a class="txt" href="">{{ menu.name }}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="cateContent" ui-view="view" >
+        
+    </div>
 </div>
