@@ -1,6 +1,8 @@
 angular.module('myApp')
     .factory('getDataService', ['$http', function ($http) {
         var cateList = $http.get('./json/index_cateList.json');
+        // 首页推荐
+        var recommedCateList = $http.get('./json/home_recommend.json');
         // 分类/推荐
 //      var livingHomeData = $http.get('./json/index_cateList.json');
         // 分类/居家
@@ -26,6 +28,9 @@ angular.module('myApp')
             // 分类列表
             getCateList : function () {
                 return cateList;
+            },
+            getRecommedCateList : function () {
+                return recommedCateList;
             },
             // 分类数据
             getSortCateData : function (id) {

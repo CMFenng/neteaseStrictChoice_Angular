@@ -8,10 +8,7 @@
     </div>
     <!-- 侧边菜单 -->
     <ul id="cateNav">
-        <li class="cateItem active" ui-sref="#/sortSubPage/op">
-            <a class="cateTxt">推荐</a>
-        </li>
-        <li class="cateItem" ui-sref=".sortSubPage" ng-repeat="cateItem in cateList">
+        <li class="cateItem" ui-sref=".sortSubPage({id:cateItem.id})" ng-repeat="cateItem in cateList">
             <a class="cateTxt">{{ cateItem.name }}</a>
         </li>
     </ul>

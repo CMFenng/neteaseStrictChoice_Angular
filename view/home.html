@@ -27,4 +27,57 @@
         </div>
         <div class="swiper-pagination" id="homeBannerPagination"></div>
     </div>
+    <ul id="growItem">
+        <li class="item">
+            <i class="itemIcon"></i>
+            <span class="itemText">网易自营品牌</span>
+        </li>
+        <li class="item">
+            <i class="itemIcon"></i>
+            <span class="itemText">30天无忧退货</span>
+        </li>
+        <li class="item">
+            <i class="itemIcon"></i>
+            <span class="itemText">48小时快速退款</span>
+        </li>
+    </ul>
+    <!-- 推荐的列表 -->
+    <div class="homeGoodGrid" ng-repeat="goodGridList in recommedCateList.cateList">
+        <h3 class="goodGridTitle">{{ goodGridList.name }}好物</h3>
+        <ul class="goodGridList">
+            <li class="goodGridItem" ng-repeat="goodGridItem in goodGridList.itemList">
+                <div class="itemWraper" >
+                    <img src="{{ goodGridItem.listPicUrl }}">
+                </div>
+                <div class="itemName">{{ goodGridItem.name }}</div>
+                <div class="price">
+                    <span>¥{{ goodGridItem.retailPrice }}</span>
+                </div>
+                <div class="specification" >
+                    <div>{{ goodGridItem.colorNum }}</div>
+                    <div>色</div>
+                    <div>可</div>
+                    <div>选</div>
+                </div>
+            </li>
+            <li class="goodGridItemMore">
+                <a class="ItemMore">
+                    <p class="txt">更多{{ goodGridList.name }}好物</p>
+                    <i class="goodGridMoreIcon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 底部 -->
+    <div id="ftWrap">
+        <div class="bd">
+            <a class="goApp">下载APP</a>
+            <a class="goWeb">电脑版</a>
+        </div>
+        <p class="copyright">
+            <span>网易公司版权所有 © 1997-2017</span>
+            <br >
+            <span>食品经营许可证：JY13301080111719</span>
+        </p>
+    </div>
 </div>

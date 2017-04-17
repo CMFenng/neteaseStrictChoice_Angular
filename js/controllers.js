@@ -7,6 +7,11 @@ angular.module('myApp')
                 $scope.cateList = resultData;
             })
             
+            // 首页推荐列表
+            getDataService.getRecommedCateList().success(function (resultData) {
+                $scope.recommedCateList = resultData;
+            })
+            
             // 监听页面渲染完成事件
             $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
                 // render 完成后执行的 js
@@ -51,10 +56,10 @@ angular.module('myApp')
                 $scope.cateList = resultData;
             })
     }])
-    .controller('SortSubPageCtrl', ['$scope', '$css', 'getDataService',
-        function ($scope, $css, getDataService) {
+    .controller('SortSubPageCtrl', ['$scope', '$css', '$stateParams', 'getDataService',
+        function ($scope, $css, $stateParams, getDataService) {
             $css.add('./css/sortSubPage.css');
-            getDataService.getSortCateData(1012000).success(function (resuleData) {
+            getDataService.getSortCateData(+$stateParams.id).success(function (resuleData) {
                 $scope.currentCategory = resuleData.currentCategory;
                 $scope.cateItemArr = resuleData.categoryItemList;
             })

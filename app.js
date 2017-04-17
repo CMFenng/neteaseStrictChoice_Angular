@@ -33,12 +33,12 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
             })
             // 分类
             .state('sort', {
-                url : '/sort',
+                url : 'sort',
                 templateUrl : './view/sort.html',
                 controller : 'SortCtrl'
             })
             .state('sort.sortSubPage', {
-                url : '/sortSubPage/:ui',
+                url : '/sortSubPage/:id',
                 views : {
                     // view@sort 是通过名字能区分要切换的容器
                     'view@sort' : {
