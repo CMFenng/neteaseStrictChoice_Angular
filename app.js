@@ -38,7 +38,7 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
                 controller : 'SortCtrl'
             })
             .state('sort.sortSubPage', {
-                url : '/sortSubPage',
+                url : '/sortSubPage/:ui',
                 views : {
                     // view@sort 是通过名字能区分要切换的容器
                     'view@sort' : {
@@ -61,4 +61,23 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
             })
         // 其他，重定向到首页
         $urlRouterProvider.otherwise('/home');
+    }])
+    // 判断页面渲染完成的指令
+    .directive('onFinishRender',['$timeout', function ($timeout) {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function () {
+                        // 方式一：发射事件通知
+                        scope.$emit('ngRepeatFinished');
+                        // 方式二：回调函数
+                        var fun = scope.$eval(attr.onFinishRender);
+                        if(fun && typeof(fun)=='function'){
+                            fun();
+                        }
+                    }, 200);  // 这个时间根据实际情况可调整
+                }
+            }
+        }
     }])

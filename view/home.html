@@ -7,18 +7,12 @@
         </div>
         <div class="swiper-container" id="homeMenuContainer">
             <div class="swiper-wrapper" id="homeMenuWrapper">
-                <div class="swiper-slide"><span class="cateText">推荐</span></div>
-                <!--<div class="swiper-slide" ng-repeat="menu in cateList">
+                <div class="swiper-slide active"><span class="cateText">推荐</span></div>
+                <!-- 页面渲染完成后发射事件通知 -->
+                <div class="swiper-slide" ng-click="choiceMenu( menu.id )"
+                    ng-repeat="menu in cateList" on-finish-render>
                     <span class="cateText">{{ menu.name }}</span>
-                </div>-->
-                <div class="swiper-slide"><span class="cateText">居家</span></div>
-                <div class="swiper-slide"><span class="cateText">旅游</span></div>
-                <div class="swiper-slide"><span class="cateText">其他</span></div>
-                <div class="swiper-slide"><span class="cateText">得到</span></div>
-                <div class="swiper-slide"><span class="cateText">的是</span></div>
-                <div class="swiper-slide"><span class="cateText">色粉</span></div>
-                <div class="swiper-slide"><span class="cateText">啊啊</span></div>
-                <div class="swiper-slide"><span class="cateText">的的</span></div>
+                </div>
             </div>
         </div>
     </div>

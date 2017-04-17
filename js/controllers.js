@@ -7,16 +7,27 @@ angular.module('myApp')
                 $scope.cateList = resultData;
             })
             
-            var mySwiper = new Swiper('#homeMenuContainer', {
-                // 设置slider容器能够同时显示的slides数量
-                slidesPerView : 'auto',
-                // slide之间的距离（单位px）
-//              spaceBetween : 20,
-                // 设定为true时，活动块会居中，而不是默认状态下的居左。
-//              centeredSlides : false,
-                // 设置为true则变为free模式，slide会根据惯性滑动且不会贴合。
-                freeMode : true,
-            })
+            // 监听页面渲染完成事件
+            $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
+                // render 完成后执行的 js
+                var mySwiper = new Swiper('#homeMenuContainer', {
+                    // 设置slider容器能够同时显示的slides数量
+                    slidesPerView : 'auto',
+                    // 设置为true则变为free模式，slide会根据惯性滑动且不会贴合。
+                    freeMode : true,
+                    // slide之间的距离（单位px）
+//                  spaceBetween : 20,
+                    // 设定为true时，活动块会居中，而不是默认状态下的居左。
+//                  centeredSlides : false,
+                })
+            });
+            
+            
+            // 点击菜单事件
+            $scope.choiceMenu = function (id) {
+                console.log(id);
+            }
+            
             // 轮播图
             var mySwiper = new Swiper('#homeBannerContainer', {
                 autoplay: 2000,//可选选项，自动滑动
