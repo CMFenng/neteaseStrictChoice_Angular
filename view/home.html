@@ -46,19 +46,21 @@
         <h3 class="goodGridTitle">{{ goodGridList.name }}好物</h3>
         <ul class="goodGridList">
             <li class="goodGridItem" ng-repeat="goodGridItem in goodGridList.itemList">
-                <div class="itemWraper" >
-                    <img src="{{ goodGridItem.listPicUrl }}">
-                </div>
-                <div class="itemName">{{ goodGridItem.name }}</div>
-                <div class="price">
-                    <span>¥{{ goodGridItem.retailPrice }}</span>
-                </div>
-                <div class="specification" >
-                    <div>{{ goodGridItem.colorNum }}</div>
-                    <div>色</div>
-                    <div>可</div>
-                    <div>选</div>
-                </div>
+                <a href="#/productDetails/{{ goodGridItem.id }}">
+                    <div class="itemWraper" >
+                        <img src="{{ goodGridItem.listPicUrl }}">
+                    </div>
+                    <div class="itemName">{{ goodGridItem.name }}</div>
+                    <div class="price">
+                        <span>¥{{ goodGridItem.retailPrice }}</span>
+                    </div>
+                    <div class="specification" >
+                        <div>{{ goodGridItem.colorNum }}</div>
+                        <div>色</div>
+                        <div>可</div>
+                        <div>选</div>
+                    </div>
+                </a>
             </li>
             <li class="goodGridItemMore">
                 <a class="ItemMore">

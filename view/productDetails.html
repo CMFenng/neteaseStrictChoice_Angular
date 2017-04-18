@@ -1,0 +1,31 @@
+<div id="productDetails">
+    <div id="topBar">
+        <i class="left" ng-click="backFn();"></i>
+        <i class="middleLogo"></i>
+        <div class="right">
+            <i class="searchIcon"></i>
+            <a href="#/cart">
+                <i class="cartIcon">
+                    <span class="cartNum">6</span>
+                </i>
+            </a>
+        </div>
+    </div>
+    <div class="imgWrap">
+        <img src="{{ productDetailsObj.listPicUrl }}">
+    </div>
+    <div class="info">
+        <h3 class="name">{{ productDetailsObj.name }}</h3>
+        <p class="simpleDesc">{{ productDetailsObj.simpleDesc }}</p>
+        <span class="currentPrice">¥{{ productDetailsObj.retailPrice }}</span>
+    </div>
+    <div class="pdBtn">
+        <div class="pdBtnLeft">
+            <i class="kefuIcon"></i>
+        </div>
+        <div class="pdBtnRight">
+            <div class="buyBtn">立即购买</div>
+            <div class="addBtn" ng-click="addFn();">加入购物车</div>
+        </div>
+    </div>
+</div>

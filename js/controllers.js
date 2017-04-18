@@ -43,8 +43,7 @@ angular.module('myApp')
                 loop : true,
             })
     }])
-    .controller('TopicCtrl', ['$scope', '$css',
-        function ($scope, $css) {
+    .controller('TopicCtrl', ['$scope', '$css', function ($scope, $css) {
             $scope.name = '我是专题';
             $css.add('./css/topic.css');
     }])
@@ -64,13 +63,36 @@ angular.module('myApp')
                 $scope.cateItemArr = resuleData.categoryItemList;
             })
     }])
-    .controller('CartCtrl', ['$scope', '$css',
-        function ($scope, $css) {
-            $scope.name = '我是购物车';
+    .controller('CartCtrl', ['$scope', '$css', 'getDataService',
+        function ($scope, $css, getDataService) {
             $css.add('./css/cart.css');
+            $scope.cartItemArr = getDataService.getCartItem();
+            
     }])
     .controller('MineCtrl', ['$scope', '$css',
         function ($scope, $css) {
-            $scope.name = '我是个人';
             $css.add('./css/mine.css');
+    }])
+    .controller('ProductDetailsCtrl', ['$scope', '$css', '$stateParams', '$window', 'getDataService',
+        function ($scope, $css, $stateParams, $window, getDataService) {
+            $css.add('./css/productDetails.css');
+            
+            getDataService.getRecommedCateList().success(function (resultData) {
+                for (tempCateList of resultData.cateList) {
+                    for (tempItemList of tempCateList.itemList) {
+                        if ($stateParams.itemId == tempItemList.id) {
+                            $scope.productDetailsObj = tempItemList;
+                        }
+                    }
+                }
+            })
+            
+            $scope.addFn = function () {
+                getDataService.addCartItem($scope.productDetailsObj);
+            }
+            
+            // 返回方法
+            $scope.backFn = function () {
+                $window.history.back();
+            }
     }])

@@ -1,4 +1,9 @@
 /* 个人简介 */
+#mine{
+    background-color: #f4f4f4;
+    height: 16.44333rem;
+}
+
 #mine #myProfile{
     padding: 0 0.4rem;
     height: 3.6rem;

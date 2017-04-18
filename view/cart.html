@@ -1,3 +1,52 @@
 <div id="cart">
-    <h1>{{ name }}</h1>
+    <div id="cartHeader">
+        <div id="cartHd">
+            <span class="logo">购物车</span>
+            <span class="right">编辑</span>
+        </div>
+    </div>
+    <div id="cartGoodWrap">
+        <ul class="servicePolicy">
+            <li class="item">
+                <i class="servicePolicyIcon"></i>
+                <span>30天无忧退货</span>
+            </li>
+            <li class="item">
+                <i class="servicePolicyIcon"></i>
+                <span>48小时快速退款</span>
+            </li>
+            <li class="item">
+                <i class="servicePolicyIcon"></i>
+                <span>满88元免邮费</span>
+            </li>
+        </ul>
+        <div id="cartGood" ng-repeat="cartItem in cartItemArr">
+            <i class="checkbox"></i>
+            <div class="good">
+                <div class="imgWrap">
+                    <img src="{{ cartItem.listPicUrl }}" class="img">
+                </div>
+                <div class="cnt">
+                    <p class="line1">
+                        <span class="name">{{ cartItem.name }}</span>
+                        <span class="num">x1</span>
+                    </p>
+                    <p class="line2">{{ cartItem.simpleDesc }}</p>
+                    <div class="line3">
+                        <span class="price">¥{{ cartItem.retailPrice }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cartFt">
+        <div class="cartFtLeft">
+            <div class="checkAll">
+                <i class="checkboxIcon"></i>
+                <span class="txt">已选(0)</span>
+            </div>
+            <div class="countPrice">¥0.00</div>
+        </div>
+        <div class="orderBtn">下单</div>
+    </div>
 </div>

@@ -14,6 +14,13 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
             } else if ($window.location.href.indexOf('mine') != -1) {
                 $rootScope.which = 'mine';
             }
+            
+            if ($window.location.href.indexOf('productDetails') != -1) {
+                // 当浏览器地址包含 userDetail 的时候，隐藏 footer
+                $rootScope.rootIsShowFooter = false;
+            } else {
+                $rootScope.rootIsShowFooter = true;
+            }
         })
     }])
     // 配置路由，依赖于 $stateProvider 和 $urlRouterProvider
@@ -33,7 +40,7 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
             })
             // 分类
             .state('sort', {
-                url : 'sort',
+                url : '/sort',
                 templateUrl : './view/sort.html',
                 controller : 'SortCtrl'
             })
@@ -58,6 +65,12 @@ angular.module('myApp', ['ui.router', 'angularCSS'])
                 url : '/mine',
                 templateUrl : './view/mine.html',
                 controller : 'MineCtrl'
+            })
+            // 商品详情
+            .state('productDetails', {
+                url : '/productDetails/:itemId',
+                templateUrl : './view/productDetails.html',
+                controller : 'ProductDetailsCtrl'
             })
         // 其他，重定向到首页
         $urlRouterProvider.otherwise('/home');

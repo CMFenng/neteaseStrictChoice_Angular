@@ -4,7 +4,6 @@
 
 body{
     padding-bottom: 1.30667rem;
-    /*background-color: #f4f4f4;*/
     font-family: PingFangSC-Light,helvetica,'Heiti SC';
     line-height: 1.5;
     color: #333;
@@ -87,4 +86,14 @@ body{
     font-size: 0.32rem;
     color: #666;
     line-height: 1;
+}
+
+/* footer 显示时候 切换容器的样式 */
+.class1{
+    height: calc(100% - 44px);
+}
+
+/* footer 隐藏时候 切换容器的样式 */
+.class2{
+    height: 100%;
 }

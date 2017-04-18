@@ -14,10 +14,10 @@
 </head>
 <body>
 <!-- 切换的容器 -->
-<div ui-view>
+<div ui-view ng-class="{ true : 'class1', false : 'class2' }[rootIsShowFooter]">
     
 </div>
-<footer id="tabBar">
+<footer id="tabBar" ng-show="rootIsShowFooter">
     <a class="item" href="#/home" ng-class="{ home : 'active' }[which]">
         <i class="icon homeIcon"></i>
         <span class="iconTxt">首页</span>

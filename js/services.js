@@ -1,10 +1,9 @@
 angular.module('myApp')
     .factory('getDataService', ['$http', function ($http) {
+        // 首页分类菜单
         var cateList = $http.get('./json/index_cateList.json');
         // 首页推荐
         var recommedCateList = $http.get('./json/home_recommend.json');
-        // 分类/推荐
-//      var livingHomeData = $http.get('./json/index_cateList.json');
         // 分类/居家
         var livingHomeData = $http.get('./json/sort01_livingHome.json');
         // 分类/餐厨
@@ -24,11 +23,16 @@ angular.module('myApp')
         // 分类/其他
         var otherData = $http.get('./json/sort09_other.json');
         
+        // 购物清单
+        var cartListArr = JSON.parse(window.localStorage.getItem("cartListObj"));
+//      var cartListArr = [];
+        
         return {
             // 分类列表
             getCateList : function () {
                 return cateList;
             },
+            // 首页推荐
             getRecommedCateList : function () {
                 return recommedCateList;
             },
@@ -66,6 +70,23 @@ angular.module('myApp')
                         return null;
                         break;
                 }
+            },
+            addCartItem : function (item) {
+                if (cartListArr.length != 0) {
+                    for (var tempItem of cartListArr) {
+                        if (tempItem.id == item.id) {
+                            alert('购物车中已存在！');
+                            return;
+                        }
+                    }
+                }
+                cartListArr.push(item);
+                window.localStorage.setItem("cartListObj", JSON.stringify(cartListArr));
+                alert('加入购物车成功！');
+            },
+            getCartItem : function () {
+                return JSON.parse(window.localStorage.getItem("cartListObj"));
+//              return cartListArr;
             }
         }
     }])
