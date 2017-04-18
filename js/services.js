@@ -24,8 +24,8 @@ angular.module('myApp')
         var otherData = $http.get('./json/sort09_other.json');
         
         // 购物清单
-        var cartListArr = JSON.parse(window.localStorage.getItem("cartListObj"));
-//      var cartListArr = [];
+        var cartListArr = [];
+        cartListArr = JSON.parse(window.localStorage.getItem("cartListObj"));
         
         return {
             // 分类列表

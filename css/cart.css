@@ -31,7 +31,7 @@
 }
 
 #cart #cartGoodWrap{
-    position: absolute;
+    position: relative;
     top: 1.17333rem;
 }
 
